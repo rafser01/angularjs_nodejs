@@ -1,0 +1,11 @@
+<div ui-view="menu"></div>
+<div ng-controller="homeController as homeCtrl" ng-init="homeCtrl.init()" >  
+
+ {{homtCtrl.name}}
+<div ng-repeat="x in  homeCtrl.userList">
+{{x.user}} {{x.dob}}
+</div>
+ <div ui-view="right-baner"></div>
+</div>
+
+

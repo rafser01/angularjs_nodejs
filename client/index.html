@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="appCtrl">
+<head>
+<meta charset="ISO-8859-1">
+<title ng-bind="pageTitle"></title>
+<script src="lib/angular.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script> -->
+<script src="lib/angular-cookies.min.js"></script>
+ <script src="lib/angular-animate.min.js"></script>
+<script src="lib/angular-sanitize.min.js"></script>
+<!--  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+ -->    
+ 
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.4.js"></script>
+ <script src="lib/ui-router.min.js"></script>
+
+<!-- Angular Lib -->
+<script src="js/path.js"></script>
+<script src="js/app.js"></script>
+<script src="js/home.js"></script>
+<script src="js/authentification.js"></script>
+<script src="js/menu.js"></script>
+ 
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!--   <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ --> <style type="text/css">
+@CHARSET "UTF-8";
+/*
+over-ride "Weak" message, show font in dark grey
+*/
+.progress-bar {
+	color: #333;
+}
+
+/*
+Reference:
+http://www.bootstrapzen.com/item/135/simple-login-form-logo/
+*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: none;
+}
+.btn-group:hover>.dropdown-menu {
+  display: block;
+}
+ 
+
+.form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	@
+	include
+	box-sizing(border-box);
+	&:
+	focus
+	{
+	z-index
+	:
+	2;
+}
+
+}
+  /*body {
+	background: url(http://i.imgur.com/GHr12sH.jpg) no-repeat center center
+		fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+} */
+/*for menu css*/
+.caret-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-bottom: 4px solid;
+    
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+.login-form {
+	margin-top: 60px;
+}
+
+form[role=login] {
+	color: #5d5d5d;
+	background: #f2f2f2;
+	padding: 26px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+form[role=login] img {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 35px;
+}
+
+form[role=login] input, form[role=login] button {
+	font-size: 18px;
+	margin: 16px 0;
+}
+
+form[role=login]>div {
+	text-align: center;
+}
+
+.form-links {
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 50px;
+}
+
+.form-links a {
+	color: #fff;
+}
+</style>
+
+</head>
+<body >
+
+	<div ng-controller="authCtrl as loginCtrl" ng-init="loginCtrl.init()">
+		
+		
+		<div ui-view="main-content"></div>
+		<!-- <button type="button" ng-click="loginCtrl.logOut()" ng-show="loginCtrl.checkLogin" class="btn
+			btn-danger">Log Out</button>  -->
+	</div>
+
+</body>
+</html>

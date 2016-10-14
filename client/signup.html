@@ -1,0 +1,114 @@
+<div class="row" ng-controller="signUp_ctrl as signUp">
+	<div
+		class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+		<form role="form">
+			<h2>
+				Sign Up <small>It's free!</small>
+			</h2>
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="first_name" id="first_name"
+							ng-model="signUp.member.firstName" class="form-control input-lg"
+							placeholder="First Name" required="true" tabindex="1">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="last_name" id="last_name"
+							ng-model="signUp.member.lastName" class="form-control input-lg"
+							placeholder="Last Name" required="true" tabindex="2">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group ">
+						<input type="text" name="user_id" id="user_id"
+							ng-model="signUp.member.user" class="form-control input-lg"
+							placeholder="User ID" required="true" tabindex="3">
+					</div>
+				</div>
+
+
+
+				<div class="row">
+
+
+					<div class="col-md-6">
+						<p class="input-group">
+							<input type="text" class="form-control" uib-datepicker-popup is-open="signUp.isOpen"
+								ng-model="signUp.member.dob"   ng-required="true"
+								datepicker-options="signUp.dateOptions" close-text="Close" /> <span
+								class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="signUp.openDob()">
+									<i class="glyphicon glyphicon-calendar"></i>
+								</button>
+							</span>
+						</p>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="form-group">
+				<input type="email" name="email" id="email"
+					ng-model="signUp.member.email" class="form-control input-lg"
+					placeholder="Email Address" required="true" tabindex="5">
+			</div>
+			<div class="form-group">
+				<input type="text" name="messName" id="messName"
+					ng-model="signUp.member.messName" class="form-control input-lg"
+					placeholder="Mess Name" required="true" tabindex="6">
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="password" name="password" id="password"
+							ng-model="signUp.member.password" class="form-control input-lg"
+							placeholder="Password" required="true" tabindex="7">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="password" name="password_confirmation"
+							id="password_confirmation" class="form-control input-lg"
+							placeholder="Confirm Password" ng-model="password_validation" match="password" required="true" tabindex="8">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4 col-sm-3 col-md-3">
+					<span class="button-checkbox">
+						<button type="button" class="btn" data-color="info" tabindex="9">I
+							Agree</button> <input type="checkbox" ng-model="checked" name="t_and_c" id="t_and_c"
+						  value="1">
+					</span>
+				</div>
+				<div class="col-xs-8 col-sm-9 col-md-9">
+					By clicking <strong class="label label-primary">Register</strong>,
+					you agree to the <a href="#" data-toggle="modal"
+						data-target="#t_and_c_m">Terms and Conditions</a> set out by this
+					site, including our Cookie Use.
+				</div>
+			</div>
+
+			<hr class="colorgraph">
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<input type="submit" ng-click="signUp.checkValue()"
+						value="Register" ng-disabled="!checked" ng-show="password_matcher() && signUp.member.password.length > 7" class="btn btn-primary btn-block btn-lg"
+						tabindex="10" >
+						<h4 ng-hide="password_matcher() && signUp.member.password.length > 7 ">{{signUp.notice}}</h4>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<a ui-sref="login" class="btn btn-success btn-block btn-lg">Sign
+						In</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+</div>
